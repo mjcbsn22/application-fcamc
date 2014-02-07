@@ -7,6 +7,7 @@ gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
+gem 'bootstrap-sass'
 gem 'haml'
 gem 'haml-rails'
 # Use Uglifier as compressor for JavaScript assets
@@ -18,7 +19,6 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
-gem 'bootstrap-sass'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 1.2'
 
 # form gems
 gem 'simple_form', '~> 3.0.0'
-gem 'carmen-rails', github: 'jim/carmen-rails'
+# gem 'carmen-rails', github: 'jim/carmen-rails'
 gem 'multi-select-rails'
 gem 'jquery-validation-rails'
 
@@ -54,8 +54,8 @@ group :development do
   # gem 'binding_of_caller'
   gem 'quiet_assets'
   # gem 'meta_request'
-  gem 'capistrano', '2.15.5'
-  gem 'capistrano-ext'
+  # gem 'capistrano', '2.15.5'
+  # gem 'capistrano-ext'
 
   gem 'thin'
 end

@@ -1,1 +1,52 @@
-.h1 FCAMC | Welcome
+.container
+  .content
+    .col-md-6
+      .panel.panel-default
+        .panel-heading.text-center Already have an account? Sign in!
+        .panel-body
+          %form.form-horizontal{action: "/users/login", id: "UserLoginForm"}
+            .form-group
+              %label.control-label.col-lg-3{for: "UserUsername"} Username
+              .col-lg-9
+                %input.form-control{name: "data[User][username]", id: "UserUsername", required: "required"}
+            .form-group
+              %label.control-label.col-lg-3{for: "UserPassword"} Password
+              .col-lg-9
+                %input.form-control{name: "data[User][password]", type: "password", id: "UserPassword", required: "required"}
+            .submit
+              %button.btn.btn-primary.btn-block{type: "submit"} Login
+    .col-md-6
+      .panel.panel-default
+        .panel-heading.text-center New users sign up!
+        .panel-body
+          %form.form-horizontal{action: "users/signup"}
+            .form-group
+              %label.col-md-3.control-label{for: "username"} Username
+              .col-md-9
+                %input.form-control{type: "text", name: "username", placeholder: "Username"}
+            .text-center
+              %a{href: "javascript:checkAvailability();"} Check availabilty
+              %br
+              %span.availabilty{id: "usernameAvailability"}
+            %br
+            .form-group
+              %label.col-md-3.control-label{for: "first_name"} First name
+              .col-md-9
+                %input.form-control{type: "text", name: "first_name", placeholder: "First name"}
+            .form-group
+              %label.col-md-3.control-label{for: "last_name"} Last name
+              .col-md-9
+                %input.form-control{type: "text", name: "last_name", placeholder: "Last name"}
+            .form-group
+              %label.col-md-3.control-label{for: "email"} Email
+              .col-md-9
+                %input.form-control{type: "email", name: "email", placeholder: "Email"}
+            .form-group
+              %label.col-md-3.control-label{for: "password"} Password
+              .col-md-9
+                %input.form-control{type: "password", name: "password", placeholder: "Password"}
+            .form-group
+              %label.col-md-3.control-label{for: "confirm_password"} Confirm
+              .col-md-9
+                %input.form-control{type: "password", name: "confirm_password", placeholder: "Confirm Password"}
+            %button.btn.btn-sm.btn-primary.btn-block{type: "submit"} Sign Up
