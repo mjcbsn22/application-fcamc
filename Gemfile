@@ -32,6 +32,8 @@ gem 'simple_form', '~> 3.0.0'
 gem 'multi-select-rails'
 gem 'jquery-validation-rails'
 
+gem 'thin'
+
 group :test, :development do
   # gem 'rspec-rails'
   gem 'awesome_print'
@@ -56,8 +58,10 @@ group :development do
   # gem 'meta_request'
   # gem 'capistrano', '2.15.5'
   # gem 'capistrano-ext'
+end
 
-  gem 'thin'
+group :production do
+  gem 'rails_12factor'
 end
 
 group :doc do
