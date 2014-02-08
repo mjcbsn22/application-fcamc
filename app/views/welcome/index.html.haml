@@ -2,16 +2,16 @@
   - unless current_user
     .col-md-6
       .panel.panel-default
-        .panel-heading.text-center Already have an account? Sign in!
+        .panel-heading.text-center Already have an account? Log in!
         .panel-body
           = simple_form_for :user, url: sessions_path, html: {class: "form-horizontal application-form"}, defaults: { input_wrapper_html: {class: "col-md-8"}, label_html: {class: "col-md-4"}, input_html: {  style: "display: inline-block"}, wrapper: :user_form} do |f|
             = f.input :email
             = f.input :password
 
-            = button_tag "Sign In", class: "btn btn-primary btn-block"
+            = button_tag "Log In", class: "btn btn-primary btn-block"
     .col-md-6
       .panel.panel-default
-        .panel-heading.text-center New users sign up!
+        .panel-heading.text-center New users, sign up!
         .panel-body
           = simple_form_for :user, url: sign_up_path, html: {class: "form-horizontal application-form"}, defaults: { input_wrapper_html: {class: "col-md-8"}, label_html: {class: "col-md-4"}, input_html: {  style: "display: inline-block"}, wrapper: :user_form} do |f|
             = f.input :first_name
