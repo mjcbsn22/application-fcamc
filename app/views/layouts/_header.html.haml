@@ -1,18 +1,20 @@
 %nav.navbar.navbar-default
   .navbar-header
-    %button.navbar-toggle{data: {toggle: "collapse", target: "#bs-example-navbar-collapse-1"}}
-      %span.sr-only Toggle navigation
-      %span.icon-bar
-      %span.icon-bar
-      %span.icon-bar
-  .collapse.navbar-collapse{id: "bs-example-navbar-collapse-1"}
-    %ul.nav.navbar-nav
-      %li
-        %a{href: "/"} Home
-      %li
-        %a{href: "users/signup"} Sign Up
-    %form.navbar-form.navbar-left{role: "search"}
-      .input-group{style: "width: 226px"}
-        %input.form-control{type: "text", placeholder: "Find Friends"}
-        %span.input-group-btn
-          %button.btn.btn-primary Go!
+    - if current_user
+      %button.navbar-toggle{data: {toggle: "collapse", target: "#fcamc-top-nav"}}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+    .navbar-brand
+      #logo= link_to image_tag('logo.gif'), root_path
+  .collapse.navbar-collapse{id: "fcamc-top-nav"}
+    - if current_user
+      %ul.nav.navbar-nav
+        %li
+          %a{href: "/"} Home
+      %form.navbar-form.navbar-left{role: "search"}
+        .input-group{style: "width: 226px"}
+          %input.form-control{type: "text", placeholder: "Find Friends"}
+          %span.input-group-btn
+            %button.btn.btn-primary Go!

@@ -12,3 +12,15 @@
 .form-group label.col-md-4 {
   margin-top: 7px;
 }
+
+.navbar-brand {
+  padding: 0;
+}
+
+div#logo {
+  padding-left: 5px;
+  padding-top: 5px;
+  img {
+    max-width: 80px;
+  }
+}
