@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-ApplicationFcamc::Application.load_tasks
+FCAMC::Application.load_tasks

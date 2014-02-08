@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-ApplicationFcamc::Application.config.secret_key_base = '0e9a8385ac1516de5e2a9835a496a08e9e47c856e556e38f0afacbbb1aa3947bb6c1eb26b7709067de0f958e12a7f72911f75337090730eae29e6e57e711f6b9'
+FCAMC::Application.config.secret_key_base = '0e9a8385ac1516de5e2a9835a496a08e9e47c856e556e38f0afacbbb1aa3947bb6c1eb26b7709067de0f958e12a7f72911f75337090730eae29e6e57e711f6b9'
