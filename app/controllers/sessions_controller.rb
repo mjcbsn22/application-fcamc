@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 
   def create
     if @user = login(params[:user][:email], params[:user][:password], params[:remember_me])
-      redirect_to(public_profile_path, notice: 'Login successful.')
+      redirect_to(root_path, notice: 'Login successful.')
     else
       redirect_to(root_path, alert: 'Login failed!')
     end
