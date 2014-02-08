@@ -1,0 +1,28 @@
+!!!
+%html
+  %head
+    %title FCAMC
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+  %body
+
+    = render 'layouts/header'
+
+    #main.container
+      - if flash[:profile]
+        %div{class: "alert alert-info"}
+          = flash[:profile]
+      #flash
+        - flash.each do |name, msg|
+          - unless name == :profile
+            %div{class: "alert alert-#{name} alert-dismissable", id: "notice"}
+              %button.close{"data-dismiss" => "alert", "aria-hidden" => "true"} &times;
+              = msg
+
+      .row-fluid
+        .col-md-12
+          = yield
+
+    = render 'layouts/footer'

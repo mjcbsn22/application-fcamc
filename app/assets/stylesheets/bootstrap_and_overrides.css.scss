@@ -1,2 +1,14 @@
 @import "bootstrap";
 @import "bootstrap/glyphicons";
+
+.alert-error, .alert-alert {
+  @extend .alert-danger;
+}
+
+.alert-notice {
+  @extend .alert-success;
+}
+
+.form-group label.col-md-4 {
+  margin-top: 7px;
+}

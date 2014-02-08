@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+if Rails.env.development? || Rails.env.staging?
+  unless User.find_by(email: 'msjacobson@gmail.com').present?
+    puts "Creating Matt User. PW: password"
+    u = User.create(email: 'msjacobson@gmail.com',
+                    first_name: 'matt',
+                    last_name: 'jacobson',
+                    password: 'password'
+                    )
+  end
+end

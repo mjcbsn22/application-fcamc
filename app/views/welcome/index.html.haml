@@ -4,34 +4,20 @@
       .panel.panel-default
         .panel-heading.text-center Already have an account? Sign in!
         .panel-body
-          = simple_form_for :user, url: sessions_path do |f|
-            .form-group
-              = f.input :username
-            .form-group
-              = f.input :password
+          = simple_form_for :user, url: sessions_path, html: {class: "form-horizontal application-form"}, defaults: { input_wrapper_html: {class: "col-md-8"}, label_html: {class: "col-md-4"}, input_html: {  style: "display: inline-block"}, wrapper: :user_form} do |f|
+            = f.input :email
+            = f.input :password
 
             = button_tag "Sign In", class: "btn btn-primary btn-block"
     .col-md-6
       .panel.panel-default
         .panel-heading.text-center New users sign up!
         .panel-body
-          = simple_form_for(:user, url: sign_up_path, html: {class: 'user-sign-up'}, defaults: { input_html: { style: "display: inline-block"} }) do |f|
-            .form-group
-              = f.input :username
-            .text-center
-              %a{href: "javascript:checkAvailability();"} Check availabilty
-              %br
-              %span.availabilty{id: "usernameAvailability"}
-            %br
-            .form-group
-              = f.input :first_name
-            .form-group
-              = f.input :last_name
-            .form-group
-              = f.input :email
-            .form-group
-              = f.input :password
-            .form-group
-              = f.input :password_confirmation
+          = simple_form_for :user, url: sign_up_path, html: {class: "form-horizontal application-form"}, defaults: { input_wrapper_html: {class: "col-md-8"}, label_html: {class: "col-md-4"}, input_html: {  style: "display: inline-block"}, wrapper: :user_form} do |f|
+            = f.input :first_name
+            = f.input :last_name
+            = f.input :email
+            = f.input :password
+            = f.input :password_confirmation, label: "Confirmation"
 
-            = button_tag "Sign Upd", class: "btn btn-primary btn-block"
+            = button_tag "Sign Up", class: "btn btn-primary btn-block"

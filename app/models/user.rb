@@ -16,8 +16,13 @@
 #  remember_me_token_expires_at :datetime
 #  created_at                   :datetime
 #  updated_at                   :datetime
+#  crypted_password             :string(255)
+#  salt                         :string(255)
 #
 
 class User < ActiveRecord::Base
-  validates_confirmation_of :password
+  authenticates_with_sorcery!
+
+  attr_accessor :password, :password_confirmation
+  validates_confirmation_of :password, message: "should match confirmation", :if => :password
 end
