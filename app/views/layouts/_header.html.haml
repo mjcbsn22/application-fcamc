@@ -31,16 +31,16 @@
             %ul.dropdown-menu
               %li
                 %a{href: "#"}
-                  %span.label.label-warning
-                    7:00 AM Hi :)
+                  %span.label.label-warning 7:00 AM
+                  Hi :)
               %li
                 %a{href: "#"}
-                  %span.label.label-warning
-                    8:00 AM How are you?
+                  %span.label.label-warning 8:00 AM
+                  How are you?
               %li
                 %a{href: "#"}
-                  %span.label.label-warning
-                    9:00 AM What are you doing?
+                  %span.label.label-warning 9:00 AM
+                  What are you doing?
               %li.divider
               %li
                 %a.text-center{href: "#"} View All
@@ -52,15 +52,15 @@
           %ul.dropdown-menu
             %li
               %a{href: "#"}
-                %span.label.label-warning> 4:00 AM
-                Favourites Snippet
+                %span.label.label-warning 4:00 AM
+                Favorites Snippet
             %li
               %a{href: "#"}
-                %span.label.label-warning> 4:30 AM
+                %span.label.label-warning 4:30 AM
                 Email marketing
             %li
               %a{href: "#"}
-                %span.label.label-warning> 5:00 AM
+                %span.label.label-warning 5:00 AM
                 Subscriber focused email design
             %li.divider
             %li
@@ -71,6 +71,7 @@
             %b.caret
           %ul.dropdown-menu
             %li.dropdown-header My Account
-            / %li= link_to 'Profile', public_profile_path
-            / %li= link_to 'Settings', account_settings_user_path(current_user)
+            %li= link_to 'Profile', public_profile_path
+            %li= link_to 'Settings', account_settings_user_path(current_user)
+            %li.divider
             %li= link_to "Log out", logout_path
