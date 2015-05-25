@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
   validates_format_of :first_name, :last_name, with: /\A[a-zA-Z\.\-\s\']*\z/
   validates :first_name, :last_name, presence: true
 
-  before_validation :generate_username, on: :create
+  before_validation :set_username, on: :create
   before_create :generate_gravatar, :generate_full_name
 
   before_save :change_name, :check_profile_picture, :check_for_disabled
@@ -40,20 +40,27 @@ class User < ActiveRecord::Base
     full_name
   end
 
-  def generate_username
+  def set_username
     if first_name && last_name
-      generated_name = "#{first_name.downcase}#{last_name.downcase}".gsub(/\W/, "")
-      if User.exists?(username: generated_name)
-        self.username = generated_name + "#{id || User.last.id + 1}"
-      else
-        self.username = generated_name
-      end
+      self.username = generate_username
+      self.username = "#{generate_username}#{get_user_id}" if user_exists
     end
   end
 
+  def generate_username
+    "#{first_name.downcase}#{last_name.downcase}".gsub(/\W/, '')
+  end
+
+  def user_exists
+    User.exists? username: generate_username
+  end
+
+  def get_user_id
+    id || User.last.id + 1
+  end
+
   def generate_full_name
-    self.full_name = "#{first_name} #{
-    last_name}"
+    self.full_name = "#{first_name} #{last_name}"
   end
 
   def change_name
@@ -64,8 +71,7 @@ class User < ActiveRecord::Base
   end
 
   def name_changed?
-    # if first or last name has changed, update the username unless the username has changed as well
-    (["first_name", "last_name"] & changed).present? && (changed.exclude?("username"))
+    (['first_name', 'last_name'] & changed).present? && (changed.exclude?('username'))
   end
 
   def generate_gravatar

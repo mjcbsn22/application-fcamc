@@ -27,7 +27,7 @@ gem 'jbuilder', '~> 1.2'
 
 # form gems
 gem 'simple_form', '~> 3.0.0'
-# gem 'carmen-rails', github: 'jim/carmen-rails'
+
 gem 'multi-select-rails'
 gem 'jquery-validation-rails'
 
@@ -36,29 +36,27 @@ gem 'sorcery'
 gem 'thin'
 
 group :test, :development do
-  # gem 'rspec-rails'
-  gem 'awesome_print'
+  gem 'rspec-rails'
   gem 'annotate', '~> 2.5.0'
-  # gem 'faker'
-  # gem 'factory_girl_rails'
-  # gem 'capybara'
-  # gem 'rest-client'
-  # gem 'term-ansicolor'
-  # gem 'shoulda'
-  # gem 'pry'
-  # gem 'pry-debugger'
-  # gem 'spring'
-  # gem 'spring-commands-rspec'
+  gem 'pry'
+  gem 'spring'
+  gem 'spring-commands-rspec'
+end
+
+group :test, :development, :staging do
+  gem 'faker'
+  gem 'awesome_print'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
 end
 
 group :development do
-  # gem 'bullet'
   gem 'better_errors'
-  # gem 'binding_of_caller'
   gem 'quiet_assets'
-  # gem 'meta_request'
-  # gem 'capistrano', '2.15.5'
-  # gem 'capistrano-ext'
+end
+
+group :test do
+  gem 'simplecov', require: false
 end
 
 group :production do
