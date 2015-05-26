@@ -13,7 +13,7 @@
       .panel.panel-default
         .panel-heading.text-center New users, sign up!
         .panel-body
-          = simple_form_for :user, url: sign_up_path, html: {class: "form-horizontal application-form"}, defaults: { input_wrapper_html: {class: "col-md-8"}, label_html: {class: "col-md-4"}, input_html: {  style: "display: inline-block"}, wrapper: :user_form} do |f|
+          = simple_form_for @user, html: {class: "form-horizontal application-form"}, defaults: { input_wrapper_html: {class: "col-md-8"}, label_html: {class: "col-md-4"}, input_html: {  style: "display: inline-block"}, wrapper: :user_form} do |f|
             = f.input :first_name
             = f.input :last_name
             = f.input :email
