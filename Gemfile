@@ -39,7 +39,7 @@ gem 'airbrake'
 
 group :test, :development do
   gem 'rspec-rails'
-  gem 'annotate', '~> 2.5.0'
+  gem 'annotate', '~> 2.6.5'
   gem 'pry'
   gem 'spring'
   gem 'spring-commands-rspec'

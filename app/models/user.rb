@@ -3,25 +3,31 @@
 # Table name: users
 #
 #  id                           :integer          not null, primary key
-#  username                     :string(255)
-#  first_name                   :string(255)
-#  last_name                    :string(255)
-#  full_name                    :string(255)
-#  email                        :string(255)
-#  profile_picture              :string(255)
-#  member_state                 :string(255)
-#  password_reset_token         :string(255)
+#  username                     :string
+#  first_name                   :string
+#  last_name                    :string
+#  full_name                    :string
+#  email                        :string
+#  profile_picture              :string
+#  member_state                 :string
+#  password_reset_token         :string
 #  password_reset_sent_at       :datetime
-#  remember_me_token            :string(255)
+#  remember_me_token            :string
 #  remember_me_token_expires_at :datetime
 #  created_at                   :datetime
 #  updated_at                   :datetime
-#  crypted_password             :string(255)
-#  salt                         :string(255)
+#  crypted_password             :string
+#  salt                         :string
 #
 
 class User < ActiveRecord::Base
+  include CinnamonRoles
+  include UserCache
+  
   authenticates_with_sorcery!
+
+  has_many :user_roles, dependent: :destroy
+  has_many :roles, through: :user_roles
 
   attr_accessor :password, :password_confirmation
   validates_confirmation_of :password, message: "should match confirmation", :if => :password
@@ -88,17 +94,6 @@ class User < ActiveRecord::Base
 
   def check_profile_picture
     generate_gravatar unless profile_picture.present?
-  end
-
-  private
-
-  def check_for_disabled
-    if self.member_state_changed? && self.member_state_change.last && self.disabled?
-      # Launch BG process to remove this user from all groups and other thingies
-      # DisableUserWorker.perform_in( 1.minute, self.id )
-      # remove from ES
-      # remove_data_from_es
-    end
   end
 
 end

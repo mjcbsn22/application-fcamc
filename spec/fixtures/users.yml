@@ -3,21 +3,21 @@
 # Table name: users
 #
 #  id                           :integer          not null, primary key
-#  username                     :string(255)
-#  first_name                   :string(255)
-#  last_name                    :string(255)
-#  full_name                    :string(255)
-#  email                        :string(255)
-#  profile_picture              :string(255)
-#  member_state                 :string(255)
-#  password_reset_token         :string(255)
+#  username                     :string
+#  first_name                   :string
+#  last_name                    :string
+#  full_name                    :string
+#  email                        :string
+#  profile_picture              :string
+#  member_state                 :string
+#  password_reset_token         :string
 #  password_reset_sent_at       :datetime
-#  remember_me_token            :string(255)
+#  remember_me_token            :string
 #  remember_me_token_expires_at :datetime
 #  created_at                   :datetime
 #  updated_at                   :datetime
-#  crypted_password             :string(255)
-#  salt                         :string(255)
+#  crypted_password             :string
+#  salt                         :string
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
