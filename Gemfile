@@ -35,6 +35,8 @@ gem 'sorcery'
 
 gem 'thin'
 
+gem 'airbrake'
+
 group :test, :development do
   gem 'rspec-rails'
   gem 'annotate', '~> 2.5.0'
