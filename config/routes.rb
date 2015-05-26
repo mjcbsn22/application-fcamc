@@ -26,4 +26,10 @@ FCAMC::Application.routes.draw do
 
   root 'welcome#index'
 
+  namespace :admin do
+
+    resources :users
+    
+  end ## end admin namespace
+
 end
