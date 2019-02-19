@@ -48,7 +48,7 @@ end
 group :test, :development, :staging do
   gem 'faker'
   gem 'awesome_print'
-  gem 'factory_girl_rails'
+  gem 'factory_bot'
   gem 'database_cleaner'
 end
 
