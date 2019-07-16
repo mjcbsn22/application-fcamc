@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 5.2.2'
+gem 'rails', '~> 5.2.2.1'
 
 # Use pg as the database for Active Record
 gem 'pg'
