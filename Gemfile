@@ -26,7 +26,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 # form gems
-gem 'simple_form', '~> 4.1.0'
+gem 'simple_form', '~> 5.0.0'
 
 gem 'multi-select-rails'
 gem 'jquery-validation-rails'
