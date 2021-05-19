@@ -33,7 +33,7 @@ gem 'jquery-validation-rails'
 
 gem 'sorcery'
 
-gem 'puma', '~> 3.12'
+gem 'puma', '~> 4.3'
 
 gem 'airbrake'
 
